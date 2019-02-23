@@ -43,7 +43,7 @@ plot(t1,x1,'LineWidth', .3)
 plot(t2,x2,'LineWidth', .4)
 plot(t3,x3,'LineWidth', .7)
 plot(t,x(t),'LineWidth', 1) 
-xlabel('t'), ylabel('x'), title("Population of Mountain Lions") 
+xlabel('time'), ylabel('x(amount in dozens)'), title("Population of Mountain Lions") 
 legend("h = 0.5","h = 0.1","h = 0.01","true")
 axis([0 12 .5 5.5])
 
