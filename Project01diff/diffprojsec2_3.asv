@@ -64,7 +64,6 @@ xxx = 0:.01:50;
 figure(3)
 hx = p*xxx.^2./(q+xxx.^2);
 plot(xxx,hx);
-xlabel('x'), ylabel('Harvest'), title("Harvesting Factor") 
 
 % As x gets very large, the harvesting factor approaches p. This makes
 % sense because mountain lions can only get as many deer has thier skill
