@@ -14,3 +14,4 @@ for n = 1:(length(t1)-1)
 end
 
 plot(t1,x1)
+xlabel('time'), ylabel('amount in dozens'), title("Population of Deer") 
