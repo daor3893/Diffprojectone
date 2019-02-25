@@ -1,4 +1,6 @@
 % 6b) 
+% Section 2, question 6, part b
+%
 r = .65;
 L = 8.1;
 p = 1.2;
