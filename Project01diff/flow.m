@@ -42,6 +42,8 @@ figure(1)
 
 % Step 5: label the axes, include a title    
 
+[t_out, v_out] = ode45(@project_system_3_1_5, [0,20], [0.5,1]);
+
   hold on
     xlabel('$x1$','Interpreter','latex')
     ylabel('$x2$','Interpreter','latex')
@@ -63,3 +65,7 @@ n3 = line([0 0], ylim); n4 = line([e,e],[-1,6]);
 
 n3.LineWidth = 1; n4.LineWidth = 1;
 n3.Color = 'r'; n4.Color = 'r';
+plot(v_out(:,1), v_out(:,2))
+
+%The solution does at we expected, because it will never reach an
+%equilibrium solution as all equilibrium points are unstable
