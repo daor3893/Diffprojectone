@@ -1,4 +1,4 @@
-
+% Section 2, question 6, part a, b, c
 
 r = .65;
 L = 8.1;
