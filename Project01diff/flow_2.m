@@ -51,11 +51,12 @@ hold on
     title('Vector field example','Interpreter','latex')
     x2_=@(x) (1/k)-(d/(c*k))*x;
     x=-1:0.1:6;
-    n0=plot(x, x2_(x));
+    n0=plot(x, x2_(x));  n0.LineWidth = 1; n0.Color ='k';
+
     f=a/b;
     n3 = line([0 0], ylim); n1 = refline([0 a/b]);
     n2 = refline([0 0]);
-    n1.LineWidth = 1; n2.LineWidth = 1; n3.LineWidth = 1; n0.LineWidth = 1
+    n1.LineWidth = 1; n2.LineWidth = 1; n3.LineWidth = 1;
     n1.Color = 'k'; n2.Color = 'k'; n3.Color = 'k';
     plot(c/d,0, 'g.', 'MarkerSize', 20);
     plot(0,2, 'g.', 'MarkerSize', 20);
