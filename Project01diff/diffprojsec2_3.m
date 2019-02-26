@@ -1,3 +1,7 @@
+% Section 2, Question 3, All parts
+% figure 1: deer population Eulers method and actual 
+% figure 2: Error in Eulers Method
+% Section 2, Question 5 (figure 3)
 %{
  y_prime = @(t,y) function_definition % y_prime = f(x,y)
 
@@ -66,11 +70,47 @@ hx = p*xxx.^2./(q+xxx.^2);
 plot(xxx,hx);
 xlabel('x'), ylabel('Harvest'), title("Harvesting Factor") 
 
-% As x gets very large, the harvesting factor approaches p. This makes
-% sense because mountain lions can only get as many deer has thier skill
-% level allows.
-% As x -> 0. your harvesting factor apporaches zero also. This makes sense
-% because deer are more rare, amking lions less likely to run into one
-% during a hunt. 
+% ANSWER FOR 1:
+%{
+  L = dozens of animals
+  r = 1/t = dozens of animals / time
+%}
+% ANSWER FOR 2:
+% x = (x0*e^(rt)*L)/(L-x0+x0*e^(rt))
 
+% ANSWER FOR 3 C:
+%{
+3. c) Using step size 0.01 was very accurate, as the error was really 
+close to being zero. The efficiency of using this step size was not much 
+different from using the larger step sizes, and having the error be as
+low as it was makes it more worthwhile to use as an approximation for 
+the function. Therefore, using a step size of 0.01 was the best balance 
+of numerical accuracy and efficiency.
+%}
+
+% ANSWER FOR 4:
+%{
+Nonlinear, 1st degree, autonomous, constant coefficient. The physical 
+meaning of autonomy for this equation means that the rate at which the 
+deer population is changing only depends on the amount of deer and mountain 
+lions, not on the time that passes. If you had a constant population, then 
+the rate at which the population grows won?t change because if you have 
+more animals, they will have a higher rate of population growth but that 
+does not depend on how much time has passed. As a counterexample, if you 
+had a person who gave birth to one child, as time goes on it will not mean 
+the next time they have a child they will have 2 children, then 3, then 4, 
+they will only have one at a time. Growth in population depends on how many 
+beings there are to create or kill the population, not how much time has 
+passed. 
+%}
+
+% ANSWER FOR 5:
+%{
+ As x gets very large, the harvesting factor approaches p. This makes
+ sense because mountain lions can only get as many deer has thier skill
+ level allows.
+ As x -> 0. your harvesting factor apporaches zero also. This makes sense
+ because deer are more rare, amking lions less likely to run into one
+ during a hunt. 
+%}
 

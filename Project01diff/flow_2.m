@@ -18,7 +18,7 @@ close all; clear all;
     x1min = -1; x1max = 6; x2min = -1; x2max = 6;
 
 % Step 2: pick step sizes for x1 and x2;
-    x1step = 0.2; x2step = 0.2; 
+    x1step = 0.1; x2step = 0.1; 
 
 % generate mesh for plotting
     [x1, x2] = meshgrid(x1min:x1step:x1max, x2min:x2step:x2max);
@@ -45,6 +45,8 @@ close all; clear all;
     axis([x1min x1max x2min x2max])
 
 % Step 5: label the axes, include a title 
+[t_out, v_out] = ode45(@project_system_3_2_2, [0,50], [0.5,1]);
+
 hold on
     xlabel('$x1$','Interpreter','latex')
     ylabel('$x2$','Interpreter','latex')
@@ -63,6 +65,7 @@ hold on
     plot(0,a/b, 'g.', 'MarkerSize', 20);
     plot(0.56818181818181,a/b, 'g.', 'MarkerSize', 20);
     plot(0,0, 'g.', 'MarkerSize', 20);
+    plot(v_out(:,1), v_out(:,2),'LineWidth',1,"Color",'r')
 hold off
 
 

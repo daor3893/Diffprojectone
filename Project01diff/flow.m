@@ -12,7 +12,6 @@ close all; clear all;
 % labeled with "Step i" where i = 1, 2, 3, 4, or 5)
 %--------------------------------------------------------------------------
 
-figure(1)
 % Step 1: Set the axis limits so that you plot the vector field over the
 %         intervals x1min < x1 < x1max, x2min < x2 < x2max
     x1min = -1; x1max = 6; x2min = -1; x2max = 6;
@@ -43,15 +42,12 @@ figure(1)
 % Step 5: label the axes, include a title    
 
 [t_out, v_out] = ode45(@project_system_3_1_5, [0,20], [0.5,1]);
-
-  hold on
+figure(1)
+hold on
     xlabel('$x1$','Interpreter','latex')
     ylabel('$x2$','Interpreter','latex')
     title('Vector field for system','Interpreter','latex')
-a = 1.5;
-b = 1.1;
-c = 2.5;
-d = 1.4;
+
 plot(0,a/b, 'g.', 'MarkerSize', 20);
 plot(c/d,0, 'g.', 'MarkerSize', 20);
 plot(c/d,a/b, 'g.', 'MarkerSize', 20);
@@ -66,6 +62,27 @@ n3 = line([0 0], ylim); n4 = line([e,e],[-1,6]);
 n3.LineWidth = 1; n4.LineWidth = 1;
 n3.Color = 'r'; n4.Color = 'r';
 plot(v_out(:,1), v_out(:,2))
+hold off
 
 %The solution does at we expected, because it will never reach an
 %equilibrium solution as all equilibrium points are unstable
+
+% Question 6
+figure(2)
+hold on 
+plot(t_out, v_out(:,1))
+plot(t_out, v_out(:,2))
+legend('Deer Population', 'Mountain Lion Population')
+title('Component Curves of Lotka-Volterra System')
+xlabel('Time')
+ylabel('Population in Dozens')
+hold off
+
+% The curves are out of phase, and this means that the interaction of the
+% predator and prey depends on the population of each other. If the deer
+% population is higher, it means the mountain lion population can rise
+% because they have more food. As they kill off more deer, there is less
+% food for them and their population goes down after the deer population
+% decreases. Then, when the mountain lion population is low, the deer
+% population can decrease because there are less predators to kill them,
+% and the cycle repeats.
