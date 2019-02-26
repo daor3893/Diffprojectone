@@ -48,8 +48,6 @@ hold on
     ylabel('$x2$','Interpreter','latex')
     title('Vector field for system','Interpreter','latex')
 
-plot(0,a/b, 'g.', 'MarkerSize', 20);
-plot(c/d,0, 'g.', 'MarkerSize', 20);
 plot(c/d,a/b, 'g.', 'MarkerSize', 20);
 plot(0,0, 'g.', 'MarkerSize', 20);
 
@@ -64,10 +62,24 @@ n3.Color = 'r'; n4.Color = 'r';
 plot(v_out(:,1), v_out(:,2))
 hold off
 
-%The solution does at we expected, because it will never reach an
-%equilibrium solution as all equilibrium points are unstable
+% ANSWER TO QUESTION 1:
+% 1st order, autonomous, linear
 
-% Question 6
+% ANSWER TO QUESTION 2: 
+% Nullclines: x1 = 0, x2 = a/b and x1 = c/d, x2 = 0
+% Equilibrium Solutions: (0,0), (c/d, a/b)
+
+% ANSWER TO QUESTION 3:
+% Figure 1
+
+% ANSWER TO QUESTION 4: 
+% (0,0) is semi stable, (c/d, a/b) is unstable
+
+% ANSWER TO QUESTION 5 (along with figure 1)
+% The solution does at we expected, because it will never reach an
+% equilibrium solution as all equilibrium points are unstable
+
+% ANSWER TO QUESTION 6 (along with figure 2)
 figure(2)
 hold on 
 plot(t_out, v_out(:,1))
