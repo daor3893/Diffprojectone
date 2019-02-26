@@ -47,6 +47,7 @@ close all; clear all;
 % Step 5: label the axes, include a title 
 [t_out, v_out] = ode45(@project_system_3_2_2, [0,50], [0.5,1]);
 
+figure(1)
 hold on
     xlabel('$x1$','Interpreter','latex')
     ylabel('$x2$','Interpreter','latex')
@@ -60,13 +61,31 @@ hold on
     n2 = refline([0 0]);
     n1.LineWidth = 1; n2.LineWidth = 1; n3.LineWidth = 1;
     n1.Color = 'k'; n2.Color = 'k'; n3.Color = 'k';
-    plot(c/d,0, 'g.', 'MarkerSize', 20);
-    plot(0,2, 'g.', 'MarkerSize', 20);
-    plot(0,a/b, 'g.', 'MarkerSize', 20);
-    plot(0.56818181818181,a/b, 'g.', 'MarkerSize', 20);
+    plot((c*b-a*c*k)/(b*d),a/b, 'g.', 'MarkerSize', 20);
     plot(0,0, 'g.', 'MarkerSize', 20);
     plot(v_out(:,1), v_out(:,2),'LineWidth',1,"Color",'r')
 hold off
 
+
+% ANSWER QUESTION 1:
+% Nullclines: x1 = 0, x2 = a/b and x2 = (1/k)-(d/c*k)*x1, x2 = 0
+% Equilibruim Solutions: (0,0), ((c*b-a*c*k)/(b*d), a/b)
+
+% ANSWER QUESTION 2:
+% (0,0) is a semi-stable equilibrium, while ((c*b-a*c*k)/(b*d), a/b) is a
+% stable equilibrium. This means that any solution will eventually end up
+% at this equilibrium point, and that is where the population will remain
+% stable
+
+% ANSWER QUESTION 3 (along with figure 2) (need to discuss this)
+figure(2)
+hold on
+plot(t_out, v_out(:,1))
+plot(t_out, v_out(:,2))
+legend('Deer Population', 'Mountain Lion Population')
+title('Component Curves of Logistic System')
+xlabel('Time')
+ylabel('Population in Dozens')
+hold off
 
 
