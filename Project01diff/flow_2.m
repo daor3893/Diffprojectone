@@ -65,7 +65,7 @@ hold on
     plot(0,a/b, 'g.', 'MarkerSize', 20);
     plot(0.56818181818181,a/b, 'g.', 'MarkerSize', 20);
     plot(0,0, 'g.', 'MarkerSize', 20);
-    plot(v_out(:,1), v_out(:,2))
+    plot(v_out(:,1), v_out(:,2),'LineWidth',1,"Color",'r')
 hold off
 
 
