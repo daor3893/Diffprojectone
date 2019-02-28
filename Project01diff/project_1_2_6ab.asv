@@ -34,7 +34,7 @@ hold on
 plot(t1,x1,'LineWidth', 1)
 plot(t1,x2,'LineWidth', 1)
 plot(t1,x3,'LineWidth', 1)
-plot(t1,x4,'LineWidth', 1)
+plot(t1,x3,'LineWidth', 1)
 dirfield(f,0:1:75, 0:0.1:10, 'Deer Pop. With Harvest')
 xlabel('time'), ylabel('Population in dozens') 
 
