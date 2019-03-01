@@ -1,18 +1,5 @@
-% Section 2, Question 3, All parts
-% figure 1: deer population Eulers method and actual 
-% figure 2: Error in Eulers Method
-% Section 2, Question 5 (figure 3)
-%{
- y_prime = @(t,y) function_definition % y_prime = f(x,y)
-
-h = ;
-t = to:h:t_end;
-y(1) = yo
-
-for n = 1:(lenght(t)-1)
-    y_{n+1} = y_{n} + h*y_prime{t_n,y_n}
-end
-%}
+%%
+% Euler approximation code for Section 2, Question 3 a
 x_prime = @(t,x) .65*x.*(1-x/5.4);
 h1 = .5;
 h2 = .1;
@@ -52,6 +39,8 @@ legend("h = 0.5","h = 0.1","h = 0.01","true")
 axis([0 12 .5 5.5])
 
 hold off
+%%
+% Error in Eulers method for Section 2, Question 3 b
 e1 = abs(x(1:51)-x1);
 e2 = abs((x(1:251)-x2));
 e3 = abs((x-x3));
@@ -61,7 +50,8 @@ semilogy(t1,e1,t2,e2,t3,e3)
 xlabel('time'), ylabel('Abs. Error'), title("Error in Population curves") 
 legend("h = 0.5","h = 0.1","h = 0.01")
 hold off
-% speculate about why the error curves contain downward “spikes” around time t = 7. 
+%%
+% Plotting the Harvest Factor
 p = 1.2;
 q = 1;
 xxx = 0:.01:50;
@@ -70,47 +60,4 @@ hx = p*xxx.^2./(q+xxx.^2);
 plot(xxx,hx);
 xlabel('x'), ylabel('Harvest'), title("Harvesting Factor") 
 
-% ANSWER FOR 1:
-%{
-  L = dozens of animals
-  r = 1/t = dozens of animals / time
-%}
-% ANSWER FOR 2:
-% x = (x0*e^(rt)*L)/(L-x0+x0*e^(rt))
-
-% ANSWER FOR 3 C:
-%{
-3. c) Using step size 0.01 was very accurate, as the error was really 
-close to being zero. The efficiency of using this step size was not much 
-different from using the larger step sizes, and having the error be as
-low as it was makes it more worthwhile to use as an approximation for 
-the function. Therefore, using a step size of 0.01 was the best balance 
-of numerical accuracy and efficiency.
-%}
-
-% ANSWER FOR 4:
-%{
-Nonlinear, 1st degree, autonomous, constant coefficient. The physical 
-meaning of autonomy for this equation means that the rate at which the 
-deer population is changing only depends on the amount of deer and mountain 
-lions, not on the time that passes. If you had a constant population, then 
-the rate at which the population grows won?t change because if you have 
-more animals, they will have a higher rate of population growth but that 
-does not depend on how much time has passed. As a counterexample, if you 
-had a person who gave birth to one child, as time goes on it will not mean 
-the next time they have a child they will have 2 children, then 3, then 4, 
-they will only have one at a time. Growth in population depends on how many 
-beings there are to create or kill the population, not how much time has 
-passed. 
-%}
-
-% ANSWER FOR 5:
-%{
- As x gets very large, the harvesting factor approaches p. This makes
- sense because mountain lions can only get as many deer has thier skill
- level allows.
- As x -> 0. your harvesting factor apporaches zero also. This makes sense
- because deer are more rare, amking lions less likely to run into one
- during a hunt. 
-%}
 
