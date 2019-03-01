@@ -61,7 +61,7 @@ figure(2)
 hold on
 plot(t_out, v_out(:,1))
 plot(t_out, v_out(:,2))
-legend('Deer Population', 'Mountain Lion Population')
+legend('Mountain Lion Population','Deer Population')
 title('Component Curves of Logistic System')
 xlabel('Time')
 ylabel('Population in Dozens')
