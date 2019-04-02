@@ -7,4 +7,5 @@ function [An] = formAn(n)
     n2=diag(v1, 1);
     n3=diag(v1,-1);
     An=n1+n2+n3;
+    An=An*(n+1)^2;
 end
